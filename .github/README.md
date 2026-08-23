@@ -7,4 +7,3 @@
 | **AI - Code Generation** | [Antigravity](https://antigravity.google/) |
 | **AI - Prompt Generation** | [Gemini](https://gemini.google.com/app) |
 | **AI - Image Generation** | [ChatGPT](https://chatgpt.com/) |
-`
