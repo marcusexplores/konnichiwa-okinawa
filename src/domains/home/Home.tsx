@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 
+import heroMobile from "@/public/images/hero-mobile.png";
+
 export const Home = () => {
   return (
     <div>
@@ -18,7 +20,7 @@ export const Home = () => {
           className="absolute inset-0 w-full h-full object-cover md:hidden"
         /> */}
         <Image
-          src="/images/hero-mobile.png"
+          src={heroMobile}
           alt="Hero Banner"
           width={0}
           height={0}

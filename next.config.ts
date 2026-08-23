@@ -4,7 +4,6 @@ const isProduction = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   basePath: isProduction ? "/konnichiwa-okinawa" : "",
-  assetPrefix: isProduction ? "/konnichiwa-okinawa" : "",
   reactCompiler: true,
   output: "export",
   images: {
