@@ -19,14 +19,14 @@ export const Home = () => {
         /> */}
         <Image
           src="/images/hero-mobile.png"
-          alt="Hero Mobile"
+          alt="Hero Banner"
           width={0}
           height={0}
           className="absolute inset-0 w-full h-full object-cover md:hidden"
         />
         <Image
           src="/images/hero-desktop.png"
-          alt="Hero Mobile"
+          alt="Hero Banner"
           width={0}
           height={0}
           className="absolute inset-0 w-full h-full object-cover hidden md:block"
