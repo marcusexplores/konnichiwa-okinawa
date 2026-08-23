@@ -21,6 +21,7 @@ export const HeroBanner = () => {
         alt="Hero Banner"
         width={0}
         height={0}
+        priority
         className="absolute inset-0 w-full h-full object-cover md:hidden"
       />
       <Image
