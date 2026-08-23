@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/marcusexplores",
+  basePath: "/marcusexplores/konnichiwa-okinawa",
 };
 
 export default nextConfig;
