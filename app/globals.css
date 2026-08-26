@@ -1,5 +1,62 @@
 @import "tailwindcss";
 
+@theme {
+  /* Global surfaces */
+  --color-background: oklch(0.987 0.005 165);
+  --color-foreground: oklch(0.273 0.056 241);
+
+  --color-surface: oklch(1.000 0.000 90);
+  --color-on-surface: oklch(0.273 0.056 241);
+
+  --color-border: oklch(0.862 0.039 197);
+
+  /* Primary — Crystal Okinawa Ocean */
+  --color-brand-primary: oklch(0.532 0.099 223);
+  --color-on-brand-primary: oklch(0.988 0.006 129);
+
+  /* Secondary — Warm Coral Sand / Sunlit Beach */
+  --color-brand-secondary: oklch(0.897 0.070 90);
+  --color-on-brand-secondary: oklch(0.273 0.056 241);
+
+  /* Muted — Pale Tropical Aqua */
+  --color-muted: oklch(0.948 0.027 194);
+  --color-on-muted: oklch(0.273 0.056 241);
+
+  /* Accent — Okinawan Coral */
+  --color-accent: oklch(0.564 0.164 32);
+  --color-on-accent: oklch(1.000 0.000 90);
+
+}
+
+.dark {
+  /* Global surfaces */
+  --color-background: oklch(0.273 0.056 241);
+  --color-foreground: oklch(0.960 0.026 188);
+
+  --color-surface: oklch(0.319 0.049 219);
+  --color-on-surface: oklch(0.960 0.026 188);
+
+  --color-border: oklch(0.490 0.054 209);
+
+  /* Primary — Bright Tropical Turquoise */
+  --color-brand-primary: oklch(0.693 0.117 207);
+  --color-on-brand-primary: oklch(0.273 0.056 241);
+
+  /* Secondary — Sunlit Okinawan Sand */
+  --color-brand-secondary: oklch(0.861 0.084 89);
+  --color-on-brand-secondary: oklch(0.273 0.056 241);
+
+  /* Muted — Deep Lagoon */
+  --color-muted: oklch(0.343 0.052 219);
+  --color-on-muted: oklch(0.960 0.026 188);
+
+  /* Accent — Sunset Coral */
+  --color-accent: oklch(0.697 0.172 34);
+  --color-on-accent: oklch(0.273 0.056 241);
+}
+
+
+/* 
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +80,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
