@@ -1,11 +1,10 @@
 import Image from 'next/image';
-
 import mobileBanner from "@/public/images/hero-mobile.png";
 import desktopBanner from "@/public/images/hero-desktop.png";
 
 export const HeroBanner = () => {
   return (
-    <div className="relative h-[calc(100dvh+12rem)] overflow-hidden">
+    <div className="relative h-[calc(100svh+12rem)] overflow-hidden">
       {/* <img
           src="/images/hero-mobile.png"
           alt="Hero Banner"
