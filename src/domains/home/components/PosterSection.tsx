@@ -41,7 +41,7 @@ export const PosterSection = () => {
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
         <motion.div
           ref={galleryRef}
-          className="flex gap-6 md:gap-10 pl-[calc(50vw-140px)] sm:pl-[calc(50vw-170px)] md:pl-[calc(50vw-240px)] pr-[calc(50vw-140px)] sm:pr-[calc(50vw-170px)] md:pr-[calc(50vw-240px)]"
+          className="flex gap-10 sm:gap-25 md:gap-50 pl-[calc(50vw-140px)] sm:pl-[calc(50vw-170px)] md:pl-[calc(50vw-240px)] pr-[calc(50vw-140px)] sm:pr-[calc(50vw-170px)] md:pr-[calc(50vw-240px)]"
           style={{ x }}
         >
           {posters.map((item) => (
