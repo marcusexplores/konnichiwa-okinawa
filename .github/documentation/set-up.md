@@ -23,11 +23,15 @@ Would you like to include AGENTS.md to guide coding agents to write up-to-date N
 To enable true static HTML export in the Next.js App Router, you must change the output mode in your configuration file.
 ```javascript
 const isProduction = process.env.NODE_ENV === "production";
+const basePath = isProduction ? "/konnichiwa-okinawa" : "";
 const nextConfig = {
-  basePath: isProduction ? "/konnichiwa-okinawa" : "", // Required only for custom repository subfolders on GitHub Pages.
+  basePath, // Required only for custom repository subfolders on GitHub Pages.
   output: 'export', // Enforces static HTML export
   images: {
     unoptimized: true, // Required because Next.js image optimization features won't work on pure static hosts
+  },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath, // Export so that application can use i to access assets in /public
   },
 };
 ```
