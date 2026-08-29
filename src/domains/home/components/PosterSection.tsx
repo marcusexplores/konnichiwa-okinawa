@@ -1,10 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import day1Poster from "@/public/images/poster-day-1.png";
 import day2Poster from "@/public/images/poster-day-2.png";
 import { Poster } from "./Poster";
 
 const posters = [
-  { alt: "Day 1", src: day2Poster },
+  { alt: "Day 1", src: day1Poster },
   { alt: "Day 2", src: day2Poster },
   { alt: "Day 3", src: day2Poster },
   { alt: "Day 4", src: day2Poster },
