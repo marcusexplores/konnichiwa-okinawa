@@ -31,7 +31,7 @@ const nextConfig = {
     unoptimized: true, // Required because Next.js image optimization features won't work on pure static hosts
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: basePath, // Export so that application can use i to access assets in /public
+    NEXT_PUBLIC_BASE_PATH: basePath, // Export so that application can use it to access assets in /public
   },
 };
 ```
