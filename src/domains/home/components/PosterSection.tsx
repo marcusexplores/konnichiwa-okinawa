@@ -47,7 +47,7 @@ export const PosterSection = () => {
           {posters.map((item) => (
             <div
               key={item.alt}
-              className="shrink-0 w-70 sm:w-85 md:w-120"
+              className="shrink-0 w-80 sm:w-120 md:w-150"
             >
               <Poster src={item.src} alt={item.alt} />
             </div>
