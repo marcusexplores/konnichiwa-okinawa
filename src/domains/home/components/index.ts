@@ -1,3 +1,3 @@
 export { HeroBanner } from "./HeroBanner";
-export { TripStatSection } from "./TripStatSection";
+export { OverviewSection } from "./OverviewSection";
 export { PosterSection } from "./PosterSection";
