@@ -1,12 +1,12 @@
 "use client";
 
-import { HeroBanner, PosterSection, OverviewSection } from "./components";
+import { HeroBanner, PosterSection, OverviewSection, FooterSection } from "./components";
 
 export const Home = () => {
   return (
     <div>
       <HeroBanner />
-      <div className="relative min-h-screen text-slate-100 py-24 bg-[linear-gradient(to_bottom,#6ac9dc_0%,#4bbdd2_4%,#2badc6_10%,#1a97b3_18%,#12809d_30%,#0d6a87_44%,#085469_58%,#053e52_72%,#03283a_85%,#020a0f_100%)]">
+      <div className="relative min-h-screen text-slate-100 pt-24 bg-[linear-gradient(to_bottom,#6ac9dc_0%,#4bbdd2_4%,#2badc6_10%,#1a97b3_18%,#12809d_30%,#0d6a87_44%,#085469_58%,#053e52_72%,#03283a_85%,#020a0f_100%)]">
         <OverviewSection />
         <PosterSection />
         <div className="max-w-4xl mx-auto space-y-10">
@@ -22,6 +22,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
+        <FooterSection />
       </div>
     </div>
   );
