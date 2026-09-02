@@ -4,6 +4,7 @@ import { cn } from '@/src/common/utilities/classname';
 import { Poster } from './Poster';
 import day1Poster from '@/public/images/poster-day-1.png';
 import day2Poster from '@/public/images/poster-day-2.png';
+import day11Poster from '@/public/images/poster-day-11.png';
 
 const posters = [
   { alt: 'Day 1', src: day1Poster },
@@ -12,6 +13,12 @@ const posters = [
   { alt: 'Day 4', src: day2Poster },
   { alt: 'Day 5', src: day2Poster },
   { alt: 'Day 6', src: day2Poster },
+  { alt: 'Day 7', src: day2Poster },
+  { alt: 'Day 8', src: day2Poster },
+  { alt: 'Day 9', src: day2Poster },
+  { alt: 'Day 10', src: day2Poster },
+  { alt: 'Day 11', src: day11Poster },
+  { alt: 'Day 12', src: day11Poster },
 ];
 
 export const PosterSection = () => {
