@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 
 interface PosterProps {
-  src: any;
+  src: StaticImageData;
   alt: string;
 }
 
@@ -10,8 +10,7 @@ export const Poster = ({ src, alt }: PosterProps) => {
     <Image
       src={src}
       alt={alt}
-      className="w-full h-auto aspect-2/3 object-cover rounded-2xl"
+      className="aspect-2/3 h-auto w-full rounded-2xl object-cover"
     />
   );
 };
-

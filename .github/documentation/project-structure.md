@@ -1,4 +1,5 @@
 # Project Structure
+
 This document outlines the project structure for the application. It follows a clear separation of concerns between the Next.js App Router and the core application logic.
 
 ```

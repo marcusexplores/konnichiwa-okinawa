@@ -1,13 +1,15 @@
 interface TripStatCardProps {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
 export const TripStatCard = ({ title, description }: TripStatCardProps) => {
   return (
-    <div className="min-w-50 flex flex-col p-5 lg:p-15 items-center bg-surface border border-gray-100 rounded-2xl shadow-sm">
-      <div className="text-2xl font-bold text-on-surface">{title}</div>
-      <div className="text-sm text-on-muted">{description}</div>
+    <div className="bg-surface flex flex-col items-center gap-2 rounded-2xl border border-gray-100 p-5 shadow-sm md:min-w-50 md:gap-4 lg:p-15">
+      <div className="text-on-surface text-lg font-bold md:text-3xl lg:text-4xl">
+        {title}
+      </div>
+      <div className="text-on-muted text-sm md:text-xl">{description}</div>
     </div>
-  )
-}
+  );
+};
