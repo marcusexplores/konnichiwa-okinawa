@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import footerBackground from "@/public/images/footer-corals.png";
+import footerBackground from '@/public/images/footer-corals.png';
 
 export const FooterSection = () => {
   return (
@@ -12,5 +12,5 @@ export const FooterSection = () => {
         className="w-full object-cover"
       />
     </section>
-  )
-}
+  );
+};
