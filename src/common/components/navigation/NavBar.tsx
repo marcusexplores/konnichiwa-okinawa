@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, useSyncExternalStore } from 'react';
-import { PiFlag, PiListLight } from 'react-icons/pi';
+import { PiListLight } from 'react-icons/pi';
 import type { Variants } from 'motion/react';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { cn } from '@/src/common/utilities/classname';
@@ -33,19 +33,6 @@ const containerVariants: Variants = {
       staggerChildren: 0.02,
       staggerDirection: -1,
     },
-  },
-};
-
-const logoVariants: Variants = {
-  expanded: {
-    opacity: 1,
-    scale: 1,
-    transition: { type: 'spring', damping: 15 },
-  },
-  collapsed: {
-    opacity: 0,
-    scale: 0.7,
-    transition: { duration: 0.15 },
   },
 };
 
@@ -189,18 +176,10 @@ export const NavBar = () => {
           !isNavExpanded && 'cursor-pointer justify-center',
         )}
       >
-        {/* Logo */}
-        <motion.div
-          variants={logoVariants}
-          className="flex shrink-0 items-center pr-2 pl-4 font-semibold text-white/90"
-        >
-          <PiFlag className="h-6 w-6" />
-        </motion.div>
-
         {/* Navigation Items */}
         <motion.div
           className={cn(
-            'flex items-center gap-1 pr-4 sm:gap-4',
+            'flex items-center justify-center gap-1 px-3 sm:gap-2 sm:px-4',
             !isNavExpanded && 'pointer-events-none',
           )}
         >
@@ -210,7 +189,7 @@ export const NavBar = () => {
               href={item.href}
               variants={itemVariants}
               onClick={(e) => e.stopPropagation()}
-              className="rounded-full px-2 py-1 text-sm font-medium whitespace-nowrap text-neutral-300 transition-colors hover:bg-white/8 hover:text-white"
+              className="rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap text-neutral-300 transition-colors hover:bg-white/8 hover:text-white"
             >
               {item.name}
             </motion.a>
