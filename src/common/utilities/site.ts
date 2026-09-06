@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { env } from './env';
 
 interface MetadataConfiguration {
   url: string;
@@ -24,6 +23,7 @@ export const configureMetadata = ({
   return {
     title,
     description,
+    metadataBase: new URL(site.domain),
     openGraph: {
       siteName: site.name,
       locale: 'en_SG',
@@ -41,6 +41,6 @@ export const configureMetadata = ({
 };
 
 const site = {
-  url: `https://marcusexplores.github.io/${env.publicBasePath}`,
+  domain: 'https://marcusexplores.github.io',
   name: 'こんにちは沖縄',
 };
