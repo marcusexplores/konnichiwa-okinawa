@@ -1,3 +1,5 @@
+'use client';
+
 export const ItineraryDay0 = () => {
   return (
     <div>

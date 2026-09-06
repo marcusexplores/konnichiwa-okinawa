@@ -197,8 +197,9 @@ export const NavBar = () => {
         </motion.div>
 
         {/* Menu Icon */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center sm:hidden">
           <motion.div
+            initial="expanded"
             variants={collapsedIconVariants}
             animate={isNavExpanded ? 'expanded' : 'collapsed'}
             className="text-white/90"
