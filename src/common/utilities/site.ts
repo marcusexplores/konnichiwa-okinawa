@@ -24,7 +24,6 @@ export const configureMetadata = ({
   return {
     title,
     description,
-    metadataBase: new URL(site.url),
     openGraph: {
       siteName: site.name,
       locale: 'en_SG',
