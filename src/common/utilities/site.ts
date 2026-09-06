@@ -42,6 +42,6 @@ export const configureMetadata = ({
 };
 
 const site = {
-  url: `https://marcusexplores.github.io${env.publicBasePath}`,
+  url: `https://marcusexplores.github.io/${env.publicBasePath}`,
   name: 'こんにちは沖縄',
 };
