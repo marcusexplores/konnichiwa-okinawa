@@ -8,6 +8,7 @@ This document credits the design inspiration, visual references, animations, and
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | Horizontal Scroll | A cinematic, multi-panel scroll experience designed to showcase content like sequential movie posters.                   | [Motion](https://motion.dev/docs/react-scroll-animations#horizontal-scroll-section)                            |
 | Parallax Scroll   | A depth-based scrolling transition that creates a simulated submersion effect, reinforcing the Okinawa ocean activities. | [FreeFrontend](https://freefrontend.com/react-scroll-effects/#2025-09-02-parallax-scroll-with-framer-motion-l) |
+| Navigation Bar    | Responsive navigation bar that expands and collapses based on scroll position and screen size.                           | [@larsen66](https://21st.dev/@larsen66/components/navigation-menu)                                             |
 
 ## Artwork & Media References
 
