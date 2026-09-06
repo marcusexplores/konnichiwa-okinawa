@@ -1,17 +1,14 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
-const isProduction = process.env.NODE_ENV === "production";
-const basePath = isProduction ? "/konnichiwa-okinawa" : "";
+const basePath = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || '';
 
 const nextConfig: NextConfig = {
   basePath,
+  assetPrefix: basePath,
   reactCompiler: true,
-  output: "export",
+  output: 'export',
   images: {
     unoptimized: true,
-  },
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 
