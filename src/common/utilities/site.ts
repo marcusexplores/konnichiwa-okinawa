@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { env } from './env';
 
 interface MetadataConfiguration {
   url: string;
@@ -41,6 +42,6 @@ export const configureMetadata = ({
 };
 
 const site = {
-  url: 'https://marcusexplores.github.io/konnichiwa-okinawa',
+  url: `https://marcusexplores.github.io${env.publicBasePath}`,
   name: 'こんにちは沖縄',
 };

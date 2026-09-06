@@ -2,17 +2,23 @@
 
 This document credits the design inspiration, visual references, animations, and media assets used throughout this site.
 
-## Motion & Animation Concepts
+## UI Components & Concepts
 
-| Concept           | Description                                                                                                              | Reference                                                                                                      |
-| :---------------- | :----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Horizontal Scroll | A cinematic, multi-panel scroll experience designed to showcase content like sequential movie posters.                   | [Motion](https://motion.dev/docs/react-scroll-animations#horizontal-scroll-section)                            |
-| Parallax Scroll   | A depth-based scrolling transition that creates a simulated submersion effect, reinforcing the Okinawa ocean activities. | [FreeFrontend](https://freefrontend.com/react-scroll-effects/#2025-09-02-parallax-scroll-with-framer-motion-l) |
-| Navigation Bar    | Responsive navigation bar that expands and collapses based on scroll position and screen size.                           | [@larsen66](https://21st.dev/@larsen66/components/navigation-menu)                                             |
+| Concept                 | Description                                                                                                              | Reference                                                                                                      |
+| :---------------------- | :----------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| Horizontal Scroll       | A cinematic, multi-panel scroll experience designed to showcase content like sequential movie posters.                   | [Motion](https://motion.dev/docs/react-scroll-animations#horizontal-scroll-section)                            |
+| Parallax Scroll         | A depth-based scrolling transition that creates a simulated submersion effect, reinforcing the Okinawa ocean activities. | [FreeFrontend](https://freefrontend.com/react-scroll-effects/#2025-09-02-parallax-scroll-with-framer-motion-l) |
+| Navigation Bar          | Responsive navigation bar that expands and collapses based on scroll position and screen size.                           | [@larsen66](https://21st.dev/@larsen66/components/navigation-menu)                                             |
+| Flight Trajectory Video | Animated map video tracing aerial flight paths of our destinations.                                                      | [mappi](https://mappi.studio/travel-map-videos)                                                                |
 
 ## Artwork & Media References
 
-| Concept                 | Description                                                                      | Reference                                                                                                 |
-| :---------------------- | :------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Poster Design           | Narrative-driven graphics framing daily moments as iconic, cinema-worthy events. | [@zor0_juro1](https://www.instagram.com/p/DbqmVcpieYI/?utm_source=ig_web_copy_link&igsi=NTc4MTIwNjQ2YQ==) |
-| Flight Trajectory Video | Animated map video tracing aerial flight paths of our destinations.              | [mappi](https://mappi.studio/travel-map-videos)                                                           |
+| Concept       | Description                                                                      | Reference                                                                                                 |
+| :------------ | :------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Poster Design | Narrative-driven graphics framing daily moments as iconic, cinema-worthy events. | [@zor0_juro1](https://www.instagram.com/p/DbqmVcpieYI/?utm_source=ig_web_copy_link&igsi=NTc4MTIwNjQ2YQ==) |
+
+## Build & Deploy References
+
+| Concept                | Description                                                              | Reference                                                                                                                                                        |
+| :--------------------- | :----------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Deploy to GitHub Pages | Automate the process of building and deploying the site to GitHub Pages. | [@onuraltuntasbusiness_99398](https://medium.com/@onuraltuntasbusiness_99398/deploying-a-static-next-js-site-to-github-pages-the-right-way-in-2025-3337d88fb84c) |

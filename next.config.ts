@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next';
+import { env } from '@/src/common/utilities/env';
 
-const basePath = process.env.NEXT_PUBLIC_PAGES_BASE_PATH || '';
+// const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const basePath = env.publicBasePath;
 
 const nextConfig: NextConfig = {
   basePath,
