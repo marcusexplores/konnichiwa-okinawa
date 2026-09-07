@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import openGraphImage from '../../../app/opengraph-image.png';
 
 interface MetadataConfiguration {
   url: string;
@@ -19,11 +20,10 @@ export const configureMetadata = ({
   type = 'website',
 }: MetadataConfiguration): Metadata => {
   const resolvedTitle = typeof title === 'string' ? title : title.default;
-
   return {
     title,
     description,
-    metadataBase: new URL(site.url),
+    metadataBase: new URL(site.domain),
     openGraph: {
       siteName: site.name,
       locale: 'en_SG',
@@ -31,6 +31,7 @@ export const configureMetadata = ({
       url,
       title: resolvedTitle,
       description: socialMediaDescription,
+      images: openGraphImage.src,
     },
     twitter: {
       card: 'summary_large_image',
@@ -41,6 +42,6 @@ export const configureMetadata = ({
 };
 
 const site = {
-  url: 'https://marcusexplores.github.io/konnichiwa-okinawa',
+  domain: 'https://marcusexplores.github.io',
   name: 'こんにちは沖縄',
 };

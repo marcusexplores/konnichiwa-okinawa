@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
+import { env } from '@/src/common/utilities/env';
 
-const publicDirectory = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const videoBasePath = `${publicDirectory}/videos/`;
+const videoBasePath = `${env.publicBasePath}/videos/`;
 
 interface VideoProps extends ComponentPropsWithoutRef<'video'> {
   src: string;

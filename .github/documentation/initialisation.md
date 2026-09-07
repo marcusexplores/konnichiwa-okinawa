@@ -24,23 +24,35 @@ Would you like to customize the import alias (`@/*` by default)? » No
 Would you like to include AGENTS.md to guide coding agents to write up-to-date Next.js code? » Yes
 ```
 
+## Environment Variable Declaration
+
+Duplicate and rename `.env.example` to `.env.development`. <br>
+Add/update environment variables accordingly. <br>
+Configure `@/src/common/utilities/env.ts` file to use the environment variables, including fallback values.
+
+```typescript
+export const env = {
+  publicBasePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+} as const;
+```
+
 ## Configure Next.js for Static Site Generation (SSG)
 
 To enable true static HTML export in the Next.js App Router, you must change the output mode in your configuration file.
 
 ```javascript
-const isProduction = process.env.NODE_ENV === 'production';
-const basePath = isProduction ? '/konnichiwa-okinawa' : '';
-const nextConfig = {
-  basePath, // Required only for custom repository subfolders on GitHub Pages.
-  output: 'export', // Enforces static HTML export
+import { env } from '@/src/common/utilities/env';
+const nextConfig: NextConfig = {
+  // In local environment, it takes from .env.development
+  // In production environment, it takes from github actions environment variable NEXT_PUBLIC_BASE_PATH
+  basePath: env.publicBasePath,
+  reactCompiler: true,
+  output: 'export',
   images: {
-    unoptimized: true, // Required because Next.js image optimization features won't work on pure static hosts
-  },
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath, // Export so that application can use it to access assets in /public
+    unoptimized: true,
   },
 };
+export default nextConfig;
 ```
 
 # Configure Prettier
@@ -60,7 +72,9 @@ const nextConfig = {
 # Configure EsLint: Enforce Architecture Boundaries with Restricted Imports
 
 This ESLint configuration establishes strict dependency boundaries for a modular codebase using no-restricted-imports. By enforcing a clear unidirectional data flow, it prevents circular dependencies, protects lower-level utilities from domain logic leakages, and forbids direct cross-domain imports to maintain modular isolations.
+
 Refer to [Project Structure](./project-structure.md).
+
 Refer to `eslint.config.mjs` for full config.
 
 # Install other dependencies

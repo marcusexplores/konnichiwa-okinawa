@@ -1,17 +1,12 @@
-import type { NextConfig } from "next";
-
-const isProduction = process.env.NODE_ENV === "production";
-const basePath = isProduction ? "/konnichiwa-okinawa" : "";
+import type { NextConfig } from 'next';
+import { env } from '@/src/common/utilities/env';
 
 const nextConfig: NextConfig = {
-  basePath,
+  basePath: env.publicBasePath,
   reactCompiler: true,
-  output: "export",
+  output: 'export',
   images: {
     unoptimized: true,
-  },
-  env: {
-    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 };
 

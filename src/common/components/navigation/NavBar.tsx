@@ -2,6 +2,7 @@
 
 import { useRef, useState, useSyncExternalStore } from 'react';
 import { PiListLight } from 'react-icons/pi';
+import Link from 'next/link';
 import type { Variants } from 'motion/react';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { cn } from '@/src/common/utilities/classname';
@@ -79,6 +80,8 @@ const useIsSmScreen = () => {
     getSmServerSnapshot,
   );
 };
+
+const MotionLink = motion.create(Link);
 
 export const NavBar = () => {
   const isSmScreen = useIsSmScreen();
@@ -184,7 +187,7 @@ export const NavBar = () => {
           )}
         >
           {navItems.map((item) => (
-            <motion.a
+            <MotionLink
               key={item.name}
               href={item.href}
               variants={itemVariants}
@@ -192,7 +195,7 @@ export const NavBar = () => {
               className="rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap text-neutral-300 transition-colors hover:bg-white/8 hover:text-white"
             >
               {item.name}
-            </motion.a>
+            </MotionLink>
           ))}
         </motion.div>
 
