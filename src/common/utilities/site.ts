@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import openGraphImage from '../../../app/opengraph-image.png';
 
 interface MetadataConfiguration {
   url: string;
@@ -19,7 +20,6 @@ export const configureMetadata = ({
   type = 'website',
 }: MetadataConfiguration): Metadata => {
   const resolvedTitle = typeof title === 'string' ? title : title.default;
-
   return {
     title,
     description,
@@ -31,6 +31,7 @@ export const configureMetadata = ({
       url,
       title: resolvedTitle,
       description: socialMediaDescription,
+      images: openGraphImage.src,
     },
     twitter: {
       card: 'summary_large_image',
