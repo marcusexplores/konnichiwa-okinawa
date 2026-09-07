@@ -23,9 +23,7 @@ export const configureMetadata = ({
   return {
     title,
     description,
-    metadataBase: new URL(
-      'https://marcusexplores.github.io/konnichiwa-okinawa',
-    ),
+    metadataBase: new URL(site.domain),
     openGraph: {
       siteName: site.name,
       locale: 'en_SG',

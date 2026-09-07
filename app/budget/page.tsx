@@ -2,7 +2,7 @@ import { configureMetadata } from '@/src/common/utilities/site';
 import { Budget } from '@/src/domains/budget';
 
 export const metadata = configureMetadata({
-  url: 'budget',
+  url: '/budget',
   title: 'Budget',
   description: 'Detailed breakdown of travel expenses for trip to Japan',
   socialMediaDescription:
