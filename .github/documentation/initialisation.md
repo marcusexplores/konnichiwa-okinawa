@@ -65,6 +65,7 @@ export default nextConfig;
   "tabWidth": 2,
   "useTabs": false,
   "plugins": ["prettier-plugin-tailwindcss"], // Enables prettier plugin for tailwind css
+  "tailwindAttributes": ["classNames"], // Supports sorting string literals nested inside JavaScript objects assigned to configured attributes
   "tailwindFunctions": ["cn", "clsx", "twMerge", "tv"] // Tell prettier to parse these function calls to format tailwind classes
 }
 ```
