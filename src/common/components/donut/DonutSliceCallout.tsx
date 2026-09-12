@@ -1,11 +1,13 @@
 import { PieSectorShapeProps } from 'recharts';
+import { cn } from '@/src/common/utilities/classname';
 
 type DonutSliceCalloutProps = Pick<
   PieSectorShapeProps,
-  'cx' | 'cy' | 'outerRadius' | 'midAngle' | 'percent'
+  'cx' | 'cy' | 'outerRadius' | 'midAngle'
 > & {
   label: string;
-  className?: string;
+  value: string;
+  classNames?: DonutSliceCalloutClassNames;
 };
 
 export const DonutSliceCallout = ({
@@ -13,9 +15,9 @@ export const DonutSliceCallout = ({
   cy,
   outerRadius,
   midAngle,
-  percent,
   label,
-  className,
+  value,
+  classNames,
 }: DonutSliceCalloutProps) => {
   const RADIAN = Math.PI / 180;
   const sin = Math.sin(-RADIAN * (midAngle ?? 1));
@@ -29,19 +31,17 @@ export const DonutSliceCallout = ({
   const textAnchor = cos >= 0 ? 'start' : 'end';
 
   return (
-    <>
+    <g className={classNames?.root}>
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        // stroke={fill}
-        className={'stroke-current'}
+        className={cn('stroke-current', classNames?.indicatorLine)}
         fill="none"
       />
       <circle
         cx={ex}
         cy={ey}
         r={2}
-        // fill={fill}
-        className={className}
+        className={cn('fill-current', classNames?.indicatorTip)}
         stroke="none"
       />
 
@@ -49,8 +49,7 @@ export const DonutSliceCallout = ({
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
         textAnchor={textAnchor}
-        // fill="#333"
-        className={className}
+        className={cn('fill-current', classNames?.label)}
       >
         {label}
       </text>
@@ -60,11 +59,18 @@ export const DonutSliceCallout = ({
         y={ey}
         dy={18}
         textAnchor={textAnchor}
-        // fill="#999"
-        className="fill-on-muted"
+        className={cn('fill-on-muted', classNames?.value)}
       >
-        {`${((percent ?? 1) * 100).toFixed(2)}%`}
+        {value}
       </text>
-    </>
+    </g>
   );
 };
+
+interface DonutSliceCalloutClassNames {
+  root?: string;
+  indicatorLine?: string;
+  indicatorTip?: string;
+  label?: string;
+  value?: string;
+}

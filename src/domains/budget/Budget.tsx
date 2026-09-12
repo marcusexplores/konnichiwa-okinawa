@@ -10,10 +10,10 @@ export const Budget = () => {
       <div className="p-4">
         <Donut
           data={expenses}
-          centerPrimaryText={getTotalSumDisplay()}
-          centerSecondaryText="per person"
+          centerDefaultPrimaryText={getTotalSumDisplay()}
+          centerDefaultSecondaryText="per person"
           classNames={{
-            root: 'h-180 w-full',
+            root: 'h-100 w-full sm:h-125 md:h-180',
           }}
         />
       </div>

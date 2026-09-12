@@ -1,39 +1,22 @@
 import { cn } from '@/src/common/utilities/classname';
 
-// interface DonutCenterDisplayProps {
-//   value: string;
-//   className?: string;
-// }
-
-// export const DonutCenterDisplay = ({
-//   value,
-//   className,
-// }: DonutCenterDisplayProps) => {
-//   return (
-//     <text
-//       x="50%"
-//       y="50%"
-//       textAnchor="middle"
-//       dominantBaseline="middle"
-//       className={cn('fill-brand-primary text-3xl', className)}
-//     >
-//       {value}
-//     </text>
-//   );
-// };
-
-interface DonutCenterDisplayProps {
+export interface DonutCenterDisplayProps {
   value: string;
   subValue?: string;
-  className?: string;
-  subValueClassName?: string;
+  label?: string;
+  classNames?: DonutCenterDisplayClassNames;
 }
+
 export const DonutCenterDisplay = ({
   value,
   subValue,
-  className,
-  subValueClassName,
+  label,
+  classNames,
 }: DonutCenterDisplayProps) => {
+  const hasLabel = Boolean(label);
+  const hasValue = Boolean(value);
+  const hasSubValue = Boolean(subValue);
+
   return (
     <text
       x="50%"
@@ -42,20 +25,34 @@ export const DonutCenterDisplay = ({
       dominantBaseline="middle"
       className="select-none"
     >
-      <tspan
-        x="50%"
-        dy={subValue ? '-0.35em' : '0'}
-        className={cn('fill-brand-primary text-2xl font-bold', className)}
-      >
-        {value}
-      </tspan>
-      {subValue && (
+      {hasLabel && (
         <tspan
           x="50%"
-          dy="1.3em"
+          dy="-3em"
+          className={cn('text-sm font-medium sm:text-lg', classNames?.label)}
+        >
+          {label}
+        </tspan>
+      )}
+      {hasValue && (
+        <tspan
+          x="50%"
+          y="50%"
           className={cn(
-            'fill-gray-500 text-sm font-medium dark:fill-gray-400',
-            subValueClassName,
+            'fill-brand-primary text-4xl font-bold sm:text-6xl',
+            classNames?.value,
+          )}
+        >
+          {value}
+        </tspan>
+      )}
+      {hasSubValue && (
+        <tspan
+          x="50%"
+          dy="2.5em"
+          className={cn(
+            'fill-gray-500 text-sm font-medium sm:text-lg',
+            classNames?.subValue,
           )}
         >
           {subValue}
@@ -64,3 +61,9 @@ export const DonutCenterDisplay = ({
     </text>
   );
 };
+
+interface DonutCenterDisplayClassNames {
+  value?: string;
+  subValue?: string;
+  label?: string;
+}

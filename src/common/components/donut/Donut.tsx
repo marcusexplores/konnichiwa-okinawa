@@ -2,21 +2,22 @@ import { useState } from 'react';
 import { Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { cn } from '@/src/common/utilities/classname';
 import { DonutCenterDisplay } from './DonutCenterDisplay';
+import { DonutLegend } from './DonutLegend';
 import { DonutSlice } from './DonutSlice';
 import { DonutSliceConfig } from './types';
 
 interface DonutProps {
   data: DonutSliceConfig[];
-  centerPrimaryText: string;
-  centerSecondaryText?: string;
+  centerDefaultPrimaryText: string;
+  centerDefaultSecondaryText?: string;
   classNames?: DonutClassNames;
 }
 
 // Reference: https://recharts.github.io/en-US/examples/CustomActiveShapePieChart/
 export const Donut = ({
   data,
-  centerPrimaryText,
-  centerSecondaryText,
+  centerDefaultPrimaryText,
+  centerDefaultSecondaryText,
   classNames,
 }: DonutProps) => {
   const [activeIndex, setActiveIndex] = useState<number | undefined>(undefined);
@@ -31,7 +32,7 @@ export const Donut = ({
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
-            shape={(props) => <DonutSlice {...props} />}
+            shape={DonutSlice}
             data={data}
             cx="50%"
             cy="50%"
@@ -39,6 +40,7 @@ export const Donut = ({
             outerRadius="80%"
             dataKey="value"
             isAnimationActive={true}
+            onTouchStart={(_, index) => setActiveIndex(index)}
             onMouseEnter={(_, index) => setActiveIndex(index)}
             onMouseLeave={() => setActiveIndex(undefined)}
           />
@@ -46,19 +48,20 @@ export const Donut = ({
 
           {activeIndex === undefined && (
             <DonutCenterDisplay
-              value={centerPrimaryText}
-              subValue={centerSecondaryText}
-              className="text-xl font-bold"
+              value={centerDefaultPrimaryText}
+              subValue={centerDefaultSecondaryText}
             />
           )}
         </PieChart>
       </ResponsiveContainer>
+      <DonutLegend
+        labels={data.map((item) => item.label)}
+        className="lg:hidden"
+      />
     </div>
   );
 };
 
 interface DonutClassNames {
   root?: string;
-  label?: string;
-  subLabel?: string;
 }

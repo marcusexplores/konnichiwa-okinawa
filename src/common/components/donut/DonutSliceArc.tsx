@@ -1,4 +1,5 @@
 import { Sector, SectorProps } from 'recharts';
+import { cn } from '../../utilities/classname';
 
 type DonutSliceArcProps = Pick<
   SectorProps,
@@ -23,7 +24,7 @@ export const DonutSliceArc = ({
       endAngle={endAngle}
       innerRadius={(outerRadius ?? 0) + 6}
       outerRadius={(outerRadius ?? 0) + 10}
-      className={className}
+      className={cn('fill-current', className)}
     />
   );
 };

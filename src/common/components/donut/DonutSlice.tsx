@@ -4,19 +4,7 @@ import { DonutSliceArc } from './DonutSliceArc';
 import { DonutSliceCallout } from './DonutSliceCallout';
 import { DonutSliceSector } from './DonutSliceSector';
 import { DonutSliceConfig } from './types';
-
-const SLICE_COLORS = [
-  'text-blue-500',
-  'text-emerald-500',
-  'text-amber-500',
-  'text-rose-500',
-  'text-purple-500',
-  'text-cyan-500',
-];
-
-interface DonutSliceClassNames {
-  centerText?: string;
-}
+import { LABEL_COLORS } from './constants';
 
 interface DonutSliceProps extends PieSectorShapeProps {
   classNames?: DonutSliceClassNames;
@@ -35,17 +23,24 @@ export const DonutSlice = ({
   percent,
   display,
   isActive,
-  classNames,
 }: DonutSliceProps) => {
-  const sectorFill = SLICE_COLORS[index % SLICE_COLORS.length];
+  const sectorFill = LABEL_COLORS[index % LABEL_COLORS.length];
 
-  const { centerText } = classNames || {};
   const { label } = payload as DonutSliceConfig;
+
+  const percentage = `${((percent ?? 1) * 100).toFixed(2)}%`;
 
   if (isActive) {
     return (
       <g className={sectorFill}>
-        <DonutCenterDisplay value={String(display)} className={centerText} />
+        <DonutCenterDisplay
+          label={label}
+          value={String(display)}
+          subValue={percentage}
+          classNames={{
+            label: 'fill-current',
+          }}
+        />
         <DonutSliceSector
           cx={cx}
           cy={cy}
@@ -53,7 +48,7 @@ export const DonutSlice = ({
           outerRadius={outerRadius}
           startAngle={startAngle}
           endAngle={endAngle}
-          className="fill-current brightness-110"
+          className="brightness-110"
         />
         <DonutSliceArc
           cx={cx}
@@ -61,16 +56,20 @@ export const DonutSlice = ({
           outerRadius={outerRadius}
           startAngle={startAngle}
           endAngle={endAngle}
-          className="fill-current brightness-110"
+          className="brightness-110"
         />
         <DonutSliceCallout
           cx={cx}
           cy={cy}
           outerRadius={outerRadius}
           midAngle={midAngle}
-          percent={percent}
           label={label}
-          className="fill-current brightness-110"
+          value={percentage}
+          classNames={{
+            root: 'hidden lg:block',
+            indicatorLine: 'brightness-110',
+            indicatorTip: 'brightness-110',
+          }}
         />
       </g>
     );
@@ -85,8 +84,11 @@ export const DonutSlice = ({
         outerRadius={outerRadius}
         startAngle={startAngle}
         endAngle={endAngle}
-        className="fill-current"
       />
     </g>
   );
 };
+
+interface DonutSliceClassNames {
+  centerText?: string;
+}
