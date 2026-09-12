@@ -5,5 +5,6 @@
   "tabWidth": 2,
   "useTabs": false,
   "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindAttributes": ["classNames"],
   "tailwindFunctions": ["cn", "clsx", "twMerge", "tv"]
 }
