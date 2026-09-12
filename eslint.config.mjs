@@ -28,18 +28,20 @@ const eslintConfig = defineConfig([
           // The order of the arrays represents the order of the groups.
           groups: [
             [
-              '^\\u0000', // Side effect imports (e.g., import './polyfill';)
-              '^react', // React core framework modules
-              '^next', // Next.js framework modules
-              '^@?\\w', // Third-party external npm packages (node_modules)
-              '^@/src', // Absolute project path mapping alias
-              '^\\.\\.(?!/?$)', // Nested parent folder imports (e.g., ../components/X)
-              '^\\.\\./?$', // Direct parent index file imports (e.g., ../ or ..)
-              '^\\./(?=.*/)(?!/?$)', // Nested local sub-folder imports (e.g., ./utils/X)
-              '^\\.(?!/?$)', // Local sibling file imports (e.g., ./Button)
-              '^\\./?$', // Current folder index file imports (e.g., ./ or .)
-              '^.+\\.s?css$', // Cascading Style Sheets (CSS/SCSS) files
-              '^@/public', // Static asset path mapping aliases (images/vectors)
+              '^\\u0000', // 1. Side effect imports (e.g., import './polyfill';)
+              '^react', // 2. React core framework modules
+              '^next', // 3. Next.js framework modules
+              '^@?\\w', // 4. Third-party external npm packages (node_modules)
+              '^@/src', // 5. Absolute project path mapping alias
+              '^\\.\\.(?!/?$)', // 6. Nested parent folder imports (e.g., ../components/X)
+              '^\\.\\./?$', // 7. Direct parent index file imports (e.g., ../ or ..)
+              '^\\./(?=.*/)(?!/?$)', // 8. Nested local sub-folder imports (e.g., ./components/X, ./utils/X)
+              '^\\./[A-Z][^/]*$', // 9. Direct sibling files starting with Caps (e.g., ./DonutCenterDisplay)
+              '^\\./types(\\.|/|$)', // 10. Direct sibling types file (e.g., ./types)
+              '^\\./(?!(types)(\\.|/|$))[a-z][^/]*$', // 11. Direct sibling files starting with lowercase (e.g., ./constants, ./utils)
+              '^\\./?$', // 12. Current folder index file imports (e.g., ./ or .)
+              '^.+\\.s?css$', // 13. Cascading Style Sheets (CSS/SCSS) files
+              '^@/public', // 14. Static asset path mapping aliases (images/vectors)
             ],
           ],
         },
