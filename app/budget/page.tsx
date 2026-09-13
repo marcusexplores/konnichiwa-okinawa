@@ -7,7 +7,6 @@ export const metadata = configureMetadata({
   description: 'Detailed breakdown of travel expenses for trip to Japan',
   socialMediaDescription:
     'Detailed breakdown of travel expenses for trip to Japan',
-  type: 'website',
 });
 
 export default function BudgetPage() {
