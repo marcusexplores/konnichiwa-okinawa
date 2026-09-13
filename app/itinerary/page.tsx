@@ -1,9 +1,10 @@
+import { routes } from '@/src/common/utilities/routes';
 import { configureMetadata } from '@/src/common/utilities/site';
 import { ItineraryOverview } from '@/src/domains/itinerary';
 
 export const metadata = configureMetadata({
-  url: '/itinerary',
-  title: 'Itinerary',
+  url: routes.itinerary.path,
+  title: routes.itinerary.name,
   description: 'Itinerary',
   socialMediaDescription: 'Itinerary',
 });

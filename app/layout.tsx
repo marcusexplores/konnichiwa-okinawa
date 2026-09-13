@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import { NavBar } from '@/src/common/components/navigation';
 import { env } from '@/src/common/utilities/env';
+import { routes } from '@/src/common/utilities/routes';
 import { configureMetadata } from '@/src/common/utilities/site';
 import './globals.css';
 
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-svh flex-col">
-        <NavBar />
+        <NavBar routes={Object.values(routes)} />
         {children}
       </body>
     </html>

@@ -4,9 +4,12 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { cn } from '@/src/common/utilities/classname';
-import { navItems } from './route';
 
-export const NavBar = () => {
+interface NavBarProps {
+  routes: NavRoute[];
+}
+
+export const NavBar = ({ routes }: NavBarProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const { scrollY } = useScroll();
@@ -46,10 +49,7 @@ export const NavBar = () => {
         y: { type: 'spring', damping: 20, stiffness: 260 },
         opacity: { duration: 0.25 },
       }}
-      className={cn(
-        'fixed top-6 z-50',
-        !isVisible && 'pointer-events-none',
-      )}
+      className={cn('fixed top-6 z-50', !isVisible && 'pointer-events-none')}
     >
       <nav
         className={cn(
@@ -60,10 +60,10 @@ export const NavBar = () => {
         )}
       >
         <div className="flex items-center justify-center gap-1 px-3">
-          {navItems.map((item) => (
+          {routes.map((item) => (
             <Link
               key={item.name}
-              href={item.href}
+              href={item.path}
               className="rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap text-neutral-300 transition-colors hover:bg-white/8 hover:text-white"
             >
               {item.name}
@@ -74,3 +74,8 @@ export const NavBar = () => {
     </motion.div>
   );
 };
+
+interface NavRoute {
+  name: string;
+  path: string;
+}
