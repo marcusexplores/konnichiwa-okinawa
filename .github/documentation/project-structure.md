@@ -36,10 +36,6 @@ my-project/
     │       ├── username.ts          # Parsers for user data
     │       └── avatar.ts
     │
-    ├── features/                    # Shared domain elements used across multiple domains
-    │   ├── payment/                 # Cross-domain payment elements (e.g., CurrencyTag, PaymentBadge)
-    │   └── profile/                 # Cross-domain profile elements (e.g., Avatar, UserBadge)
-    │
     └── domains/                     # High-level business feature screens & workflows
         ├── payment/                 # Checkout screens, payment forms, payment flow
         │   ├── components/
