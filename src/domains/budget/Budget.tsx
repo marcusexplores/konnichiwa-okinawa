@@ -1,22 +1,29 @@
 'use client';
 
 import { Donut } from '@/src/common/components/donut';
+import {
+  PageHeader,
+  PageSection,
+  PageTitle,
+} from '@/src/common/components/page';
 import { getExpenses, getTotalSumDisplay } from '@/src/repositories/finance';
 
 export const Budget = () => {
   return (
     <div>
-      <div>Title section</div>
-      <div className="p-4">
+      <PageHeader>
+        <PageTitle value="Budget" />
+      </PageHeader>
+      <PageSection>
         <Donut
           data={expenses}
           centerDefaultPrimaryText={getTotalSumDisplay()}
           centerDefaultSecondaryText="per person"
           classNames={{
-            root: 'h-100 w-full sm:h-125 md:h-180',
+            root: 'h-100 w-full sm:h-125 lg:h-180',
           }}
         />
-      </div>
+      </PageSection>
     </div>
   );
 };
