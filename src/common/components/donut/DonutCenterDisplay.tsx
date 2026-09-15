@@ -39,7 +39,7 @@ export const DonutCenterDisplay = ({
           x="50%"
           y="50%"
           className={cn(
-            'fill-brand-primary text-4xl font-bold sm:text-5xl md:text-6xl',
+            'fill-brand-primary text-4xl font-bold sm:text-5xl xl:text-6xl',
             classNames?.value,
           )}
         >

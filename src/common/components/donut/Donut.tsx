@@ -25,38 +25,40 @@ export const Donut = ({
   return (
     <div
       className={cn(
-        'outline-none **:focus:outline-none [&_.recharts-surface]:outline-none [&_.recharts-wrapper]:outline-none',
+        'flex flex-col outline-none **:focus:outline-none [&_.recharts-surface]:outline-none [&_.recharts-wrapper]:outline-none',
         classNames?.root,
       )}
     >
-      <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
-          <Pie
-            shape={DonutSlice}
-            data={data}
-            cx="50%"
-            cy="50%"
-            innerRadius="65%"
-            outerRadius="90%"
-            dataKey="value"
-            isAnimationActive={true}
-            onTouchStart={(_, index) => setActiveIndex(index)}
-            onMouseEnter={(_, index) => setActiveIndex(index)}
-            onMouseLeave={() => setActiveIndex(undefined)}
-          />
-          <Tooltip content={() => null} />
-
-          {activeIndex === undefined && (
-            <DonutCenterDisplay
-              value={centerDefaultPrimaryText}
-              subValue={centerDefaultSecondaryText}
+      <div className="min-h-0 w-full flex-1">
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              shape={DonutSlice}
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius="65%"
+              outerRadius="90%"
+              dataKey="value"
+              isAnimationActive={true}
+              onTouchStart={(_, index) => setActiveIndex(index)}
+              onMouseEnter={(_, index) => setActiveIndex(index)}
+              onMouseLeave={() => setActiveIndex(undefined)}
             />
-          )}
-        </PieChart>
-      </ResponsiveContainer>
+            <Tooltip content={() => null} />
+
+            {activeIndex === undefined && (
+              <DonutCenterDisplay
+                value={centerDefaultPrimaryText}
+                subValue={centerDefaultSecondaryText}
+              />
+            )}
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
       <DonutLegend
         labels={data.map((item) => item.label)}
-        className="lg:hidden"
+        className="xl:hidden"
       />
     </div>
   );

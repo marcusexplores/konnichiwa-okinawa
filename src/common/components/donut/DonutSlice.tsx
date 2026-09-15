@@ -66,7 +66,7 @@ export const DonutSlice = ({
           label={label}
           value={percentage}
           classNames={{
-            root: 'hidden lg:block',
+            root: 'hidden xl:block',
             indicatorLine: 'brightness-110',
             indicatorTip: 'brightness-110',
           }}
