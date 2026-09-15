@@ -14,13 +14,13 @@ export const Budget = () => {
       <PageHeader>
         <PageTitle value="Budget" />
       </PageHeader>
-      <PageSection>
+      <PageSection className="flex items-center justify-center">
         <Donut
           data={expenses}
           centerDefaultPrimaryText={getTotalSumDisplay()}
           centerDefaultSecondaryText="per person"
           classNames={{
-            root: 'h-100 w-full sm:h-125 xl:h-180',
+            root: 'h-100 w-full sm:h-125 md:w-2xl lg:w-4xl xl:h-180',
           }}
         />
       </PageSection>

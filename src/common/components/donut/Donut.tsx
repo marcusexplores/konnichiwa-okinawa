@@ -25,11 +25,17 @@ export const Donut = ({
   return (
     <div
       className={cn(
-        'flex flex-col outline-none **:focus:outline-none [&_.recharts-surface]:outline-none [&_.recharts-wrapper]:outline-none',
+        'flex flex-col outline-none **:focus:outline-none md:flex-row md:items-center [&_.recharts-surface]:outline-none [&_.recharts-wrapper]:outline-none',
         classNames?.root,
       )}
     >
-      <div className="min-h-0 w-full flex-1">
+      <div
+        className={cn(
+          'min-h-0 md:h-full',
+          'flex-1 md:flex-none',
+          'w-full md:w-4/5 lg:w-3/4 xl:w-full',
+        )}
+      >
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
@@ -58,7 +64,7 @@ export const Donut = ({
       </div>
       <DonutLegend
         labels={data.map((item) => item.label)}
-        className="xl:hidden"
+        className="md:w-1/5 lg:w-1/4 xl:hidden"
       />
     </div>
   );
