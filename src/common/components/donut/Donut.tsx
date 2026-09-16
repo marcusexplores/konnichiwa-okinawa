@@ -25,15 +25,17 @@ export const Donut = ({
   return (
     <div
       className={cn(
-        'flex flex-col outline-none **:focus:outline-none md:flex-row md:items-center [&_.recharts-surface]:outline-none [&_.recharts-wrapper]:outline-none',
+        'flex flex-col outline-none **:focus:outline-none [&_.recharts-surface]:outline-none [&_.recharts-wrapper]:outline-none',
+        'md:flex-row md:items-center',
         classNames?.root,
       )}
     >
       <div
         className={cn(
-          'min-h-0 md:h-full',
-          'flex-1 md:flex-none',
-          'w-full md:w-4/5 lg:w-3/4 xl:w-full',
+          'min-h-0 w-full flex-1',
+          'md:h-full md:w-4/5 md:flex-none',
+          'lg:w-3/4',
+          'xl:w-full',
         )}
       >
         <ResponsiveContainer width="100%" height="100%">

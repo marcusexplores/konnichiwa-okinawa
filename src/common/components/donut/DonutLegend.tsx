@@ -10,7 +10,8 @@ export const DonutLegend = ({ labels, className }: DonutLegendProps) => {
   return (
     <div
       className={cn(
-        'flex w-full flex-wrap justify-center gap-x-2 md:flex-col md:items-start md:justify-center md:gap-y-2',
+        'flex w-full flex-wrap justify-center gap-x-2',
+        'md:flex-col md:items-start md:justify-center md:gap-y-2',
         className,
       )}
     >
