@@ -1,19 +1,9 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import { NavBar } from '@/src/common/components/navigation';
 import { env } from '@/src/common/utilities/env';
-import { routes } from '@/src/common/utilities/routes';
+import { navRoutes } from '@/src/common/utilities/routes';
 import { configureMetadata } from '@/src/common/utilities/site';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata = configureMetadata({
   url: `/${env.publicBasePath}`,
@@ -30,9 +20,19 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-svh flex-col">
-        <NavBar routes={Object.values(routes)} />
+        <NavBar routes={navRoutes} />
         {children}
       </body>
     </html>
   );
 }
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});

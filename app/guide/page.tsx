@@ -3,8 +3,8 @@ import { configureMetadata } from '@/src/common/utilities/site';
 import { Guide } from '@/src/domains/guide';
 
 export const metadata = configureMetadata({
-  url: routes.guide.path,
-  title: routes.guide.name,
+  url: routes.guide.root,
+  title: 'Guide',
   description: 'Detailed guide',
   socialMediaDescription: 'Detailed guide',
 });

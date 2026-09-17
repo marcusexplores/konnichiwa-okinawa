@@ -3,7 +3,7 @@ import { configureMetadata } from '@/src/common/utilities/site';
 import { ItineraryDay0 } from '@/src/domains/itinerary';
 
 export const metadata = configureMetadata({
-  url: `${routes.itinerary.path}/day-0-departure`,
+  url: routes.itinerary.day0,
   title: 'Day 0',
   description: 'Itinerary',
   socialMediaDescription: 'Itinerary',
