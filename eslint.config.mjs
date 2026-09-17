@@ -29,7 +29,7 @@ const eslintConfig = defineConfig([
           groups: [
             [
               '^\\u0000', // 1. Side effect imports (e.g., import './polyfill';)
-              '^react', // 2. React core framework modules
+              '^react$', // 2. React core framework modules
               '^next', // 3. Next.js framework modules
               '^@?\\w', // 4. Third-party external npm packages (node_modules)
               '^@/src', // 5. Absolute project path mapping alias
