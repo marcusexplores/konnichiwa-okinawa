@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Breakpoint } from '@/src/common/components/breakpoint/Breakpoint';
 import { NavBar } from '@/src/common/components/navigation';
 import { env } from '@/src/common/utilities/env';
 import { navRoutes } from '@/src/common/utilities/routes';
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       <body className="flex min-h-svh flex-col">
         <NavBar routes={navRoutes} />
         {children}
+        <Breakpoint />
       </body>
     </html>
   );
