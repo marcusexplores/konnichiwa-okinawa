@@ -1,0 +1,70 @@
+[
+  {
+    "category": "outbound",
+    "airline": "Peach Aviation",
+    "designator": "MM774",
+    "departure": {
+      "date": "2026-11-16",
+      "time": "02:15",
+      "city": "Singapore",
+      "airportCode": "SIN"
+    },
+    "arrival": {
+      "date": "2026-11-16",
+      "time": "09:35",
+      "city": "Osaka",
+      "airportCode": "KIX"
+    }
+  },
+  {
+    "category": "domestic",
+    "airline": "Jetstar Japan",
+    "designator": "GK351",
+    "departure": {
+      "date": "2026-11-19",
+      "time": "08:40",
+      "city": "Osaka",
+      "airportCode": "KIX"
+    },
+    "arrival": {
+      "date": "2026-11-19",
+      "time": "11:15",
+      "city": "Okinawa",
+      "airportCode": "OKA"
+    }
+  },
+  {
+    "category": "inbound",
+    "airline": "Peach Aviation",
+    "designator": "MM925",
+    "departure": {
+      "date": "2026-11-27",
+      "time": "13:35",
+      "city": "Okinawa",
+      "airportCode": "OKA"
+    },
+    "arrival": {
+      "date": "2026-11-27",
+      "time": "14:20",
+      "city": "Taipei",
+      "airportCode": "TPE"
+    }
+  },
+  {
+    "category": "inbound",
+    "airline": "Singapore Airlines",
+    "designator": "SQ879",
+    "departure": {
+      "date": "2026-11-27",
+      "time": "17:35",
+      "city": "Taipei",
+      "airportCode": "TPE"
+    },
+    "arrival": {
+      "date": "2026-11-27",
+      "time": "22:20",
+      "city": "Singapore",
+      "airportCode": "SIN"
+    }
+  }
+]

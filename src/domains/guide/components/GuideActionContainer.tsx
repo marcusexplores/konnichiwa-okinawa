@@ -35,7 +35,7 @@ const cards = [
     description: 'Departure times & airline info',
     image: checklistIcon,
     imageAlt: 'Flight Action Icon',
-    link: routes.guide.checklist,
+    link: routes.guide.flight,
   },
   {
     title: 'Hotel',

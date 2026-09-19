@@ -22,6 +22,7 @@ export const routes = {
   guide: {
     root: '/guide',
     checklist: '/guide/checklist',
+    flight: '/guide/flight',
   },
 } as const satisfies Record<string, string | Record<string, string>>;
 
