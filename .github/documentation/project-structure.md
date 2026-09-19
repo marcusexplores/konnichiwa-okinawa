@@ -52,4 +52,4 @@ my-project/
 
 Clean Import & Dependency Rules
 With this hierarchy, your dependency flow remains strictly unidirectional to prevent circular imports:
-$$\text{common / data} \longrightarrow \text{repositories} \longrightarrow \text{features} \longrightarrow \text{domains} \longrightarrow \text{app}$$
+$$\text{common / data} \longrightarrow \text{repositories} \longrightarrow \text{domains} \longrightarrow \text{app}$$

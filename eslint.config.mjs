@@ -58,13 +58,7 @@ const eslintConfig = defineConfig([
         {
           patterns: [
             {
-              group: [
-                '@/data/*',
-                '@/repositories/*',
-                '@/features/*',
-                '@/domains/*',
-                '@/app/*',
-              ],
+              group: ['@/data/*', '@/repositories/*', '@/domains/*', '@/app/*'],
               message:
                 'Layer Violation: `src/common` must be pure and domain-agnostic. It cannot import from any other layer.',
             },
@@ -83,12 +77,7 @@ const eslintConfig = defineConfig([
         {
           patterns: [
             {
-              group: [
-                '@/repositories/*',
-                '@/features/*',
-                '@/domains/*',
-                '@/app/*',
-              ],
+              group: ['@/repositories/*', '@/domains/*', '@/app/*'],
               message:
                 'Layer Violation: `src/data` contains raw static constants only and cannot import from upper layers.',
             },
@@ -107,7 +96,7 @@ const eslintConfig = defineConfig([
         {
           patterns: [
             {
-              group: ['@/features/*', '@/domains/*', '@/app/*'],
+              group: ['@/domains/*', '@/app/*'],
               message:
                 'Layer Violation: `src/repositories` can only import from `data/` or `common/`. UI layers are forbidden.',
             },
@@ -117,26 +106,7 @@ const eslintConfig = defineConfig([
     },
   },
 
-  // 4. Layer: src/features (Cross-domain shared UI & hooks)
-  {
-    files: ['src/features/**/*.{js,jsx,ts,tsx}'],
-    rules: {
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['@/domains/*', '@/app/*'],
-              message:
-                'Layer Violation: `src/features` cannot import from high-level `domains/` or Next.js `app/`.',
-            },
-          ],
-        },
-      ],
-    },
-  },
-
-  // 5. Layer: src/domains (Business domain screens & workflows)
+  // 4. Layer: src/domains (Business domain screens & workflows)
   {
     files: ['src/domains/**/*.{js,jsx,ts,tsx}'],
     rules: {
@@ -152,7 +122,7 @@ const eslintConfig = defineConfig([
             {
               group: ['@/domains/*/*'],
               message:
-                'Cross-Domain Violation: Domains cannot import directly from other domains. Move shared UI to `@/features` or shared data to `@/repositories`.',
+                'Cross-Domain Violation: Domains cannot import directly from other domains. Move shared UI to `@/common` or shared data to `@/repositories`.',
             },
           ],
         },
