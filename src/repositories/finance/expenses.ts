@@ -1,11 +1,6 @@
 import summary from '@/src/data/finance/summary.json';
+import { Expenses } from './types';
 import { formatMoneySgd } from './format';
-
-export interface Expenses {
-  category: string;
-  amount: number;
-  display: string;
-}
 
 export const getExpenses = (): Expenses[] => {
   return Object.entries(summary).map(([category, amount]) => ({
