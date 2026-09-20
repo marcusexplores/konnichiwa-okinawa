@@ -10,7 +10,7 @@ import { focusRing } from './utils';
 
 const tabProps = tv({
   extend: focusRing,
-  base: 'relative flex cursor-default items-center rounded-full px-3 py-1.5 text-sm font-medium text-gray-900 transition forced-color-adjust-none',
+  base: 'relative flex cursor-default cursor-pointer items-center rounded-full px-3 py-1.5 text-sm font-medium text-gray-900 transition forced-color-adjust-none',
   variants: {
     isDisabled: {
       true: 'selected:text-gray-300 forced-colors:selected:text-[HighlightText] selected:bg-gray-200 forced-colors:selected:bg-[GrayText] text-gray-200 forced-colors:text-[GrayText]',

@@ -8,7 +8,7 @@ import { focusRing } from './utils';
 
 const tabPanelStyles = tv({
   extend: focusRing,
-  base: 'box-border w-full shrink-0 snap-start snap-always',
+  base: 'box-border w-full shrink-0 snap-start snap-always px-2',
 });
 
 export function TabPanel(props: TabPanelProps) {
