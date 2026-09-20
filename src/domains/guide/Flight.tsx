@@ -6,7 +6,7 @@ import { FlightInformation } from './components/FlightInformation';
 export const Flight = () => {
   return (
     <div>
-      <PageSection className="max-w-lg 2xl:max-w-md">
+      <PageSection>
         <FlightInformation />
       </PageSection>
     </div>

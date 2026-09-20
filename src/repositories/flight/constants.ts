@@ -1,5 +1,5 @@
 export const FLIGHT_CATEGORY = {
-  INBOUND: 'inbound',
   OUTBOUND: 'outbound',
   DOMESTIC: 'domestic',
+  INBOUND: 'inbound',
 } as const;

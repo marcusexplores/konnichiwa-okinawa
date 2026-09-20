@@ -33,7 +33,7 @@ export const FlightTicket = ({
   arrivalAirportCode,
   stubFields,
 }: FlightTicketProps) => {
-  // Align notch with wavy line (68% vertical position)
+  // Align notch with dotted line (68% vertical position)
   const notchYPos = '68%';
   const notchRadius = 11;
 

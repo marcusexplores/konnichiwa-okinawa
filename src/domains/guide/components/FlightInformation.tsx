@@ -1,68 +1,40 @@
-import { getFlightInfo } from '@/src/repositories/flight';
-import { FlightTicket } from './FlightTicket';
+import {
+  Tab,
+  TabList,
+  TabPanelCarousel,
+  Tabs,
+  TabSelectionIndicator,
+} from '@/src/common/components/tabs';
+import { FLIGHT_CATEGORY, getFlightInfo } from '@/src/repositories/flight';
+import { FlightDomesticView } from './FlightDomesticView';
+import { FlightInboundView } from './FlightInboundView';
+import { FlightOutboundView } from './FlightOutboundView';
+import { FlightTabPanel } from './FlightTabPanel';
 
 const { outbound, domestic, inbound } = getFlightInfo();
 
 export const FlightInformation = () => {
   return (
-    <div>
-      {outbound.map((flight) => (
-        <FlightTicket
-          key={flight.designator}
-          airline={flight.airline}
-          designator={flight.designator}
-          departureDate={flight.departure.date}
-          departureTime={flight.departure.time}
-          departureCity={flight.departure.city}
-          departureAirportCode={flight.departure.airportCode}
-          arrivalDate={flight.arrival.date}
-          arrivalTime={flight.arrival.time}
-          arrivalCity={flight.arrival.city}
-          arrivalAirportCode={flight.arrival.airportCode}
-          stubFields={[
-            {
-              label: 'Gate',
-              value: 'C31',
-            },
-            {
-              label: 'Seat',
-              value: '24C',
-            },
-          ]}
-        />
-      ))}
-
-      {domestic.map((flight) => (
-        <FlightTicket
-          key={flight.designator}
-          airline={flight.airline}
-          designator={flight.designator}
-          departureDate={flight.departure.date}
-          departureTime={flight.departure.time}
-          departureCity={flight.departure.city}
-          departureAirportCode={flight.departure.airportCode}
-          arrivalDate={flight.arrival.date}
-          arrivalTime={flight.arrival.time}
-          arrivalCity={flight.arrival.city}
-          arrivalAirportCode={flight.arrival.airportCode}
-        />
-      ))}
-
-      {inbound.map((flight) => (
-        <FlightTicket
-          key={flight.designator}
-          airline={flight.airline}
-          designator={flight.designator}
-          departureDate={flight.departure.date}
-          departureTime={flight.departure.time}
-          departureCity={flight.departure.city}
-          departureAirportCode={flight.departure.airportCode}
-          arrivalDate={flight.arrival.date}
-          arrivalTime={flight.arrival.time}
-          arrivalCity={flight.arrival.city}
-          arrivalAirportCode={flight.arrival.airportCode}
-        />
-      ))}
-    </div>
+    <Tabs className="max-w-full">
+      <TabList aria-label="Flight Information">
+        {Object.values(FLIGHT_CATEGORY).map((category) => (
+          <Tab key={category} id={category} className="capitalize">
+            {category}
+          </Tab>
+        ))}
+      </TabList>
+      <TabSelectionIndicator />
+      <TabPanelCarousel>
+        <FlightTabPanel id={FLIGHT_CATEGORY.OUTBOUND} itineraries={outbound}>
+          <FlightOutboundView />
+        </FlightTabPanel>
+        <FlightTabPanel id={FLIGHT_CATEGORY.DOMESTIC} itineraries={domestic}>
+          <FlightDomesticView />
+        </FlightTabPanel>
+        <FlightTabPanel id={FLIGHT_CATEGORY.INBOUND} itineraries={inbound}>
+          <FlightInboundView />
+        </FlightTabPanel>
+      </TabPanelCarousel>
+    </Tabs>
   );
 };

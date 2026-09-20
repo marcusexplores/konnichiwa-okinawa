@@ -1,9 +1,9 @@
 import flightDetails from '@/src/data/flight/information.json';
-import { FlightInfo } from './types';
+import { FlightCatalog } from './types';
 import { FLIGHT_CATEGORY } from './constants';
 import { formatDate } from './format';
 
-export const getFlightInfo = (): FlightInfo => {
+export const getFlightInfo = (): FlightCatalog => {
   return Object.values(FLIGHT_CATEGORY).reduce((acc, category) => {
     acc[category] = flightDetails
       .filter((flight) => flight.category === category)
@@ -20,5 +20,5 @@ export const getFlightInfo = (): FlightInfo => {
         },
       }));
     return acc;
-  }, {} as FlightInfo);
+  }, {} as FlightCatalog);
 };

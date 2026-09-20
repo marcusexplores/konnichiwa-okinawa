@@ -1,12 +1,12 @@
 import { FLIGHT_CATEGORY } from './constants';
 
-export type FlightInfo = Record<
-  FlightCategory,
-  Omit<FlightItinerary, 'category'>[]
->;
+export type FlightCatalog = Record<FlightCategory, FlightItinerary[]>;
 
-interface FlightItinerary {
-  category: FlightCategory;
+// interface FlightInfo extends FlightItinerary {
+//   category: FlightCategory;
+// }
+
+export interface FlightItinerary {
   airline: string;
   designator: string;
   departure: FlightSegment;
