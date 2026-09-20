@@ -72,13 +72,12 @@ export const FlightTicket = ({
         style={maskStyle}
         className="relative w-full rounded-[26px] bg-[#232220] p-5 text-white"
       >
-        {/* Top Tag & Date Header */}
+        {/* Top Row */}
         <div className="mb-4 flex items-center justify-between">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-[#383633] px-3 py-1 text-xs font-medium text-neutral-200">
             <PiAirplaneFill className="h-3.5 w-3.5 -rotate-45 fill-current text-white" />
             <span>{airline}</span>
           </div>
-
           <div className="flex items-center gap-2">
             <span className="text-xs font-normal text-neutral-400">
               {designator}
@@ -86,6 +85,7 @@ export const FlightTicket = ({
           </div>
         </div>
 
+        {/* Dates */}
         <div className="-mt-1 mb-2 flex items-center justify-between text-xs font-semibold tracking-wider text-neutral-400">
           <div className="pl-0.5">{departureDate}</div>
           <div>{arrivalDate}</div>
