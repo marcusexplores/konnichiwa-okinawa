@@ -1,4 +1,4 @@
-import React from 'react';
+import { CSSProperties } from 'react';
 import { PiAirplaneFill } from 'react-icons/pi';
 
 interface StubField {
@@ -37,12 +37,8 @@ export const FlightTicket = ({
   const notchYPos = '68%';
   const notchRadius = 11;
 
-  const shadowBlur = 20;
-  const shadowOffsetY = 10;
-  const shadowOpacity = 0.4;
-
   // CSS Mask creates true circular transparent holes on both sides
-  const maskStyle: React.CSSProperties = {
+  const maskStyle: CSSProperties = {
     WebkitMaskImage: `
       radial-gradient(circle ${notchRadius}px at 0px ${notchYPos}, transparent 98%, #000 100%),
       radial-gradient(circle ${notchRadius}px at 100% ${notchYPos}, transparent 98%, #000 100%)
@@ -59,15 +55,8 @@ export const FlightTicket = ({
     maskRepeat: 'no-repeat',
   };
 
-  const filterStyle: React.CSSProperties = {
-    filter: `drop-shadow(0px ${shadowOffsetY}px ${shadowBlur}px rgba(0, 0, 0, ${shadowOpacity}))`,
-  };
-
   return (
-    <div
-      style={filterStyle}
-      className="mx-auto w-full max-w-sm transition-all duration-300"
-    >
+    <div className="isolate mx-auto w-full max-w-sm drop-shadow-md drop-shadow-[#232220]">
       <div
         style={maskStyle}
         className="relative w-full rounded-[26px] bg-[#232220] p-5 text-white"
