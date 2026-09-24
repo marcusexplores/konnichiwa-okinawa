@@ -1,4 +1,4 @@
-import { Video } from '@/src/common/components/Video';
+import { Video } from '@/src/common/components/video/Video';
 import { TripStatCard } from './TripStatCard';
 
 export const OverviewSection = () => {
