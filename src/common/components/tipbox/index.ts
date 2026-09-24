@@ -1,0 +1,1 @@
+export { Tipbox } from './Tipbox';
