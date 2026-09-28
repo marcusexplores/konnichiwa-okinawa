@@ -1,6 +1,6 @@
 'use client';
 
-import { PageSection } from '@/src/common/components/page';
+import { PAGE_SECTION_TYPE, PageSection } from '@/src/common/components/page';
 import { Tipbox } from '@/src/common/components/tipbox';
 import { ItineraryDayBanner } from './components/ItineraryDayBanner';
 import BackgroundImage from '@/public/images/day-wind-landscape.jpg';
@@ -8,7 +8,7 @@ import BackgroundImage from '@/public/images/day-wind-landscape.jpg';
 export const ItineraryDay0 = () => {
   return (
     <div>
-      <PageSection className="px-0">
+      <PageSection type={PAGE_SECTION_TYPE.HEADER_BANNER}>
         <ItineraryDayBanner
           image={BackgroundImage}
           day="01"

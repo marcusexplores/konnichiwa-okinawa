@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Breakpoint } from '@/src/common/components/breakpoint/Breakpoint';
-import { NavBar } from '@/src/common/components/navigation';
+import { Navigation } from '@/src/common/components/navigation';
 import { env } from '@/src/common/utilities/env';
 import { navRoutes } from '@/src/common/utilities/routes';
 import { configureMetadata } from '@/src/common/utilities/site';
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-svh flex-col">
-        <NavBar routes={navRoutes} />
+        <Navigation routes={navRoutes} />
         {children}
         <Breakpoint />
       </body>

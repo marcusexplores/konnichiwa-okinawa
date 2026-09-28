@@ -3,13 +3,15 @@
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
+import { NavRoute } from './types';
 
 interface NavBarProps {
   routes: NavRoute[];
+  className?: string;
 }
 
-export const NavBar = ({ routes }: NavBarProps) => {
+export const NavBar = ({ routes, className }: NavBarProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const { scrollY } = useScroll();
@@ -26,7 +28,7 @@ export const NavBar = ({ routes }: NavBarProps) => {
 
     if (currentScrollY <= 20) {
       // When scroll is at the top, navbar hides upwards
-      setIsVisible(false);
+      setIsVisible(true);
     } else if (scrollDiff > 3) {
       // When scrolling down, navbar hides upwards
       setIsVisible(false);
@@ -49,7 +51,11 @@ export const NavBar = ({ routes }: NavBarProps) => {
         y: { type: 'spring', damping: 20, stiffness: 260 },
         opacity: { duration: 0.25 },
       }}
-      className={cn('fixed top-6 z-50', !isVisible && 'pointer-events-none')}
+      className={cn(
+        'fixed top-3 z-50',
+        !isVisible && 'pointer-events-none',
+        className,
+      )}
     >
       <nav
         className={cn(
@@ -60,13 +66,13 @@ export const NavBar = ({ routes }: NavBarProps) => {
         )}
       >
         <div className="flex items-center justify-center gap-1 px-3">
-          {routes.map((item) => (
+          {routes.map((route) => (
             <Link
-              key={item.name}
-              href={item.path}
+              key={route.name}
+              href={route.path}
               className="rounded-full px-3 py-1 text-sm font-medium whitespace-nowrap text-neutral-300 transition-colors hover:bg-white/8 hover:text-white"
             >
-              {item.name}
+              {route.name}
             </Link>
           ))}
         </div>
@@ -74,8 +80,3 @@ export const NavBar = ({ routes }: NavBarProps) => {
     </motion.div>
   );
 };
-
-interface NavRoute {
-  name: string;
-  path: string;
-}
