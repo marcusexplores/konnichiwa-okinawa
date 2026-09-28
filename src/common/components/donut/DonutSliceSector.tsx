@@ -1,5 +1,5 @@
 import { Sector, SectorProps } from 'recharts';
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 
 type DonutSliceSectorProps = Pick<
   SectorProps,

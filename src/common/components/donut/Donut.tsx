@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 import { DonutCenterDisplay } from './DonutCenterDisplay';
 import { DonutLegend } from './DonutLegend';
 import { DonutSlice } from './DonutSlice';

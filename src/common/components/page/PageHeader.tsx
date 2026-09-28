@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 
 interface PageHeaderProps {
   children: ReactNode;

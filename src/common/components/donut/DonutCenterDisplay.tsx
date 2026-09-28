@@ -1,4 +1,4 @@
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 
 export interface DonutCenterDisplayProps {
   value: string;

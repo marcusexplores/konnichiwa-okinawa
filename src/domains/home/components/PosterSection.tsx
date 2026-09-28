@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 import { routes } from '@/src/common/utilities/routes';
 import { Poster } from './Poster';
 import day1Poster from '@/public/images/poster-day-1.png';

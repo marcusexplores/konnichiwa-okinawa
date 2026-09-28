@@ -1,4 +1,4 @@
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 import { LABEL_COLORS } from './constants';
 
 interface DonutLegendProps {

@@ -1,5 +1,5 @@
 import { PieSectorShapeProps } from 'recharts';
-import { cn } from '@/src/common/utilities/classname';
+import { cn } from 'tailwind-variants';
 
 type DonutSliceCalloutProps = Pick<
   PieSectorShapeProps,
