@@ -46,6 +46,7 @@ export const NavMenu = ({ routes, className }: NavMenuProps) => {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         showContent={showContent}
+        className={className}
       />
     </>
   );

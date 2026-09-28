@@ -8,6 +8,7 @@ interface NavMenuPanelProps {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   showContent: boolean;
+  className?: string;
 }
 
 export const NavMenuPanel = ({
@@ -15,6 +16,7 @@ export const NavMenuPanel = ({
   isOpen,
   setIsOpen,
   showContent,
+  className,
 }: NavMenuPanelProps) => {
   useEffect(() => {
     if (isOpen) {
@@ -52,6 +54,7 @@ export const NavMenuPanel = ({
         isOpen
           ? 'pointer-events-auto translate-y-0 opacity-150'
           : 'pointer-events-none -translate-y-full opacity-0',
+        className,
       )}
     >
       <nav className="mx-auto flex w-full max-w-md flex-col space-y-6 text-center">
